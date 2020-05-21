@@ -1965,6 +1965,7 @@ uninstall(){
 	   restoreStockSettings;
 	   # Uninstall
 	   rm -rf '/system/bin/energized' '/system/bin/ENERGIZED' '/data/adb/modules/energizedprotection' '/sbin/.magisk/modules/energizedprotection' '/sdcard/EnergizedProtection' > /dev/null 2>&1;
+	   clear
 	   echo -e $W"\nIt's sad to see you go!"$N
 	   echo -e $W"But "$N$Y"https://energized.pro"$N$W" is alwyas there for you!"$N
 	   echo -e $W"Reboot once to remove stales."$N
