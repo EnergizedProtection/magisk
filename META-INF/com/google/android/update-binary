@@ -193,11 +193,4 @@ $BOOTMODE || recovery_cleanup
 rm -rf $TMPDIR
 
 ui_print " - Done"
-ui_print "----------------------------------"
-ui_print ""
-ui_print " >> Recommended Busybox: "
-ui_print "  > Busybox for Android NDK"
-ui_print ""
-ui_print " *For further assistance > ep -tg"
-ui_print "=================================="
 exit 0

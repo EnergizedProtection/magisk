@@ -4,10 +4,10 @@
 
 <div align="center">
   <!-- Version -->
-    <img src="https://img.shields.io/badge/Version-1.0.0β-blue.svg?longCache=true&style=flat-square"
+    <img src="https://img.shields.io/badge/Version-1.0.7β-blue.svg?longCache=true&style=flat-square"
       alt="Version" />
   <!-- Last Updated -->
-    <img src="https://img.shields.io/badge/Updated-May 21, 2019-orange.svg?longCache=true&style=flat-square"
+    <img src="https://img.shields.io/badge/Updated-May 22, 2020-orange.svg?longCache=true&style=flat-square"
       alt="_time_stamp_" />
   <!-- Status -->
     <img src="https://img.shields.io/badge/Status-beta-yellow.svg?longCache=true&style=flat-square"
@@ -181,10 +181,16 @@ Uninstall
  
 Changelog
 ------
+
+v.1.0.7β
+- Fix patch applied to adblock app detection.
+- Fixed pack download issue via CLI flag. (`ep -p <pack>`)
+- Beautify the module scripts.
+
 v.1.0.0β
 - Added CLI Flag support.
 - Added Magisk 20+ compatibility.
-- Added user cofig support.
+- Added user config support.
 - Improved blacklist, whitelist and redirectlist functions.
 - Improved instant blacklist, whitelist and redirectlist functions.
 - Updated download links.

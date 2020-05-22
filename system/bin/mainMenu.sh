@@ -47,7 +47,7 @@ showInfo() {
     # Check Energized Protection
     checkAdblockerApp & pid=$!
     spinPID "Adblocker App: Checking"
-    if [[ checkAdblockerApp == 0 ]]; then
+    if [[ -z "$adblockAppName" ]]; then
         echo -en $G"\r[✓] Adblocker App: No confliction.\n"$N
     else
         echo -en $R"\r[×] Adblocker App: $adblockAppName detected.\n    - Disable to avoid conflict.\n"$N
@@ -154,7 +154,7 @@ compatibilityInfo() {
     # Check Energized Protection
     checkAdblockerApp & pid=$!
     spinPID "Adblocker App: Checking"
-    if [[ checkAdblockerApp == 0 ]]; then
+    if [[ -z "$adblockAppName" ]]; then
         echo -en $G"\r[✓] Adblocker App: No confliction.\n"$N
     else
         echo -en $R"\r[×] Adblocker App: $adblockAppName detected.\n    - Disable to avoid conflict.\n"$N
@@ -200,7 +200,7 @@ showMenu() {
     echo ''
     echo -e $Y"      P   R   O   T   E   C   T   I   O   N"$N; sleep 0.05;
     echo -e $W"$divider"$N; sleep 0.05;
-    echo "        Version: $version | Updated: $releaseDate"; sleep 0.05;
+    echo "     Version: $version | Updated: $releaseDate"; sleep 0.05;
     echo -e $W"$divider"$N; sleep 0.05;
     echo ""; sleep 0.05;
     echo -e $Y'                  energized.pro'$N; sleep 0.05;

@@ -134,6 +134,12 @@ print_modname() {
   ui_print " - Type ep -h & tap enter         "
   ui_print " - Follow on screen options.      "
   ui_print "----------------------------------"
+  ui_print ""
+  ui_print " >> Recommended Busybox: "
+  ui_print "  > Busybox for Android NDK"
+  ui_print ""
+  ui_print " *For further assistance > ep -tg"
+  ui_print "=================================="
 }
 
 # Copy/extract your module files into $MODPATH in on_install.
