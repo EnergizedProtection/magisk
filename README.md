@@ -4,7 +4,7 @@
 
 <div align="center">
   <!-- Version -->
-    <img src="https://img.shields.io/badge/Version-1.0.7β-blue.svg?longCache=true&style=flat-square"
+    <img src="https://img.shields.io/badge/Version-1.0.8β-blue.svg?longCache=true&style=flat-square"
       alt="Version" />
   <!-- Last Updated -->
     <img src="https://img.shields.io/badge/Updated-May 22, 2020-orange.svg?longCache=true&style=flat-square"
@@ -182,10 +182,12 @@ Uninstall
 Changelog
 ------
 
-v.1.0.7β
+v.1.0.8β
 - Fix patch applied to adblock app detection.
 - Fixed pack download issue via CLI flag. (`ep -p <pack>`)
+- Fixed basic file setup issue.
 - Beautify the module scripts.
+- Fixed typo.
 
 v.1.0.0β
 - Added CLI Flag support.

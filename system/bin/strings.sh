@@ -9,7 +9,7 @@ Website: https://energized.pro
 Github: https://github.com/EnergizedProtection/block
 Copyright (c) 2018-2020, Energized Protection
 License: CC-BY-NC-SA 4.0
-Version: 1.0.7
+Version: 1.0.8
 
 Symlinks: <energized|Energized|ep|EP|epro>
  >> Use any of the symlinks to run Energized Protection module.

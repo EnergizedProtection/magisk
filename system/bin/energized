@@ -436,10 +436,9 @@ setupFilesMin() {
     checkBusybox;
     # Check Energized Protection
     checkEP;
-    #echo $epPack;
 }
 # ----------------------------------------
-
+setupFilesMin;
 # ----------------------------------------
 # Setup required stuffs for menu
 # ----------------------------------------
@@ -1998,7 +1997,7 @@ uninstall(){
 	   rm -rf '/system/bin/energized' '/system/bin/ENERGIZED' '/data/adb/modules/energizedprotection' '/sbin/.magisk/modules/energizedprotection' '/sdcard/EnergizedProtection' > /dev/null 2>&1;
 	   clear
 	   echo -e "$W""\nIt's sad to see you go!""$N"
-	   echo -e "$W""But ""$N""$Y""https://energized.pro""$N""$W"" is alwyas there for you!""$N"
+	   echo -e "$W""But ""$N""$Y""https://energized.pro""$N""$W"" is always there for you!""$N"
 	   echo -e "$W""Reboot once to remove stales.""$N"
 	else
 	   echo -e "$Y""\nGlad you didn't go! Thank you! :)\n""$N"
