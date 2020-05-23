@@ -4,7 +4,7 @@
 
 <div align="center">
   <!-- Version -->
-    <img src="https://img.shields.io/badge/Version-1.2.0β-blue.svg?longCache=true&style=flat-square"
+    <img src="https://img.shields.io/badge/Version-1.2.1β-blue.svg?longCache=true&style=flat-square"
       alt="Version" />
   <!-- Last Updated -->
     <img src="https://img.shields.io/badge/Updated-May 23, 2020-orange.svg?longCache=true&style=flat-square"
@@ -183,6 +183,9 @@ Uninstall
  
 Changelog
 ------
+
+v.1.2.1β
+- Added missing awk alias.
 
 v.1.2.0β
 - No more separate busybox required. Magisk Busybox will be used by default.

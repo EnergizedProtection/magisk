@@ -23,6 +23,7 @@ modPath="/sbin/.magisk/modules/energizedprotection/system/bin"
 . $modPath/mainMenu.sh
 . $modPath/strings.sh
 alias wget="$busybox wget"
+alias awk="$busybox awk"
 # ----------------------------------------
 # Config
 # ----------------------------------------
@@ -94,7 +95,7 @@ currentIP=$(grep -o -m 1 '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}
 # ----------------------------------------
 # Versioning & Date
 # ----------------------------------------
-version=$Y'1.2.0β'$N > /dev/null 2>&1
+version=$Y'1.2.1β'$N > /dev/null 2>&1
 releaseDate=$G'May 23, 2020'$N > /dev/null 2>&1
 date=$(date "+%d.%m.%Y %H:%M:%S")
 # ----------------------------------------

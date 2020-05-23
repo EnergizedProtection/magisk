@@ -50,6 +50,7 @@ checkBusybox() {
     fi
 }
 # ----------------------------------------
+alias awk="$busybox awk"
 alias date="$busybox date"
 alias echo="$busybox echo"
 alias cat="$busybox cat"
