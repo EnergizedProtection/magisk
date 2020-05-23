@@ -822,16 +822,15 @@ backupHosts() {
         spinPID "Storing Hosts"
         cp $filter $filterBackup
         echo -en $W"\r["$N$Y"✓"$N$W"] Storing Hosts: "$N$Y"Completed."$N; sleep 0.1;
-        echo -e -n $W"[+] Backup Config file?"$N $Y"[Y/N]"$N "$answer"
+        echo -e -n $W"\n[+] Backup Config file?"$N $Y"[Y/N]"$N "$answer"
         read answer
         if [[ "$answer" == "Y" || "$answer" == "y" ]]; then
             spinPID "Storing Config"
             cp $config $configBackup
-            echo -en $W"\r["$N$Y"✓"$N$W"] Storing Config: "$N$Y"Completed."$N; sleep 0.1;
+            echo -en $W"\r["$N$Y"✓"$N$W"] Storing Config: "$N$Y"Completed.\n\n"$N; sleep 0.1;
         else
-            echo -e "$W""[×] Not backing up config.""$N"; sleep 0.1;
+            echo -e $W"[×] Not backing up config.\n"$N; sleep 0.1;
         fi
-        echo ''
         printDonate;
     else
         echo -e "$R""$divider""$N"; sleep 0.05;
@@ -891,13 +890,12 @@ restoreHosts() {
            if [[ "$answer" == "Y" || "$answer" == "y" ]]; then
               spinPID "Restoring Config"
               cp $configBackup $config
-              echo -en $W"\r["$N$Y"✓"$N$W"] Restoring Config: "$N$Y"Completed."$N; sleep 0.1;
+              echo -en $W"\r["$N$Y"✓"$N$W"] Restoring Config: "$N$Y"Completed.\n\n"$N; sleep 0.1;
               echo ''
            else
               echo -e $W"[×] Not restoring config.\n"$N; sleep 0.1;
            fi
         fi
-        
         printDonate;
     else
         echo -e $R"$divider"$N; sleep 0.05;
@@ -1737,7 +1735,7 @@ redirectIP() {
         else
             echo -e "$W""[+] Current IPV4: $currentIP""$N"
         fi
-        echo -e -n "$W""[+] Select IP Type -\n > 1. IPV4\n > 2. IPV6\n\n[+] Your choice -""$N" "$ipType"
+        echo -e -n "$W""[+] Select IP Type -\n\n > 1. IPV4\n > 2. IPV6\n\n[+] Your choice -""$N" "$ipType"
         read ipType
         if [[ "$ipType" == "1" ]]; then
             while true
