@@ -4,8 +4,11 @@
 
 <div align="center">
   <!-- Version -->
-    <img src="https://img.shields.io/badge/Version-1.2.1β-blue.svg?longCache=true&style=flat-square"
+    <img src="https://img.shields.io/badge/Version-1.2.2β-blue.svg?longCache=true&style=flat-square"
       alt="Version" />
+  <!-- Magisk -->
+    <img src="https://img.shields.io/badge/Magisk-20.0+-green.svg?longCache=true&style=flat-square"
+      alt="Version" />  
   <!-- Last Updated -->
     <img src="https://img.shields.io/badge/Updated-May 23, 2020-orange.svg?longCache=true&style=flat-square"
       alt="_time_stamp_" />
@@ -183,6 +186,10 @@ Uninstall
  
 Changelog
 ------
+
+v.1.2.2β
+- Fixed pack download issue in menu mode.
+- Updated `--help` details.
 
 v.1.2.1β
 - Added missing awk alias.

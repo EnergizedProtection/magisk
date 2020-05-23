@@ -1,3 +1,5 @@
+alias wget="$busybox wget"
+
 showInfo() {
     setupFiles;
     checkEP;
