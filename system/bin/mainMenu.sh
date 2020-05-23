@@ -1,8 +1,9 @@
 showInfo() {
     setupFiles;
     checkEP;
-    echo ''
-    echo -e $Y"[>] Compatibility Info -"$N
+    echo -e $Y"$divider"$N; sleep 0.05;
+    echo -e $Y'ϟ C O M P A T I B I L I T Y  I N F O -'$N; sleep 0.05;
+    echo -e $Y"$divider"$N; sleep 0.05;
     # Check shell
     checkShell & pid=$!
     spinPID "Shell: Checking"
@@ -68,11 +69,13 @@ showInfo() {
     # Check Energized Protection
     checkUpdate & pid=$!
     spinPID "Update: Checking";
-    echo -en "$checkUpdatePrint"
+    echo -en "$checkUpdatePrint\n"
     #
     sleep 0.1
     if [ -f $hosts ]; then
-        echo -e $Y"\n[>] Pack Info -"$N
+        echo -e $Y"$divider"$N; sleep 0.05;
+        echo -e $Y'ϟ P A C K  I N F O -'$N; sleep 0.05;
+        echo -e $Y"$divider"$N; sleep 0.05;
         # ----------------------------------------
         printCountedDomains;
         # ----------------------------------------
@@ -100,6 +103,8 @@ showInfo() {
             currentIP=$(grep ' watchdog.energized.pro' $hosts | sed 's/ watchdog.energized.pro//')
         fi
         echo -e $W"[+] Current IP: "$N$Y"$currentIP"$N; sleep 0.1;
+        update=$C"`date -r $hosts "+%a, %d %b %y %H:%M:%S"`"$N
+        echo -e $W"[+] Updated: "$N$Y"$update"$N; sleep 0.1;
     fi
     echo ''
     printDonate;
@@ -339,7 +344,7 @@ showMenu() {
         case "$INPUT" in
                 # Spark Protection
                 # ----------------------------------------
-            1|spark|Spark|SPARK) DIR="spark/formats/hosts.gz"
+                1|spark|Spark|SPARK) DIR="spark/formats/hosts.gz"
                 clear
                 echo -e $Y"$divider"$N && sleep 0.05
                 echo -e $Y'[+] Applying Energized Spark Protection'$N; sleep 0.05;
@@ -347,7 +352,7 @@ showMenu() {
                 ;;
                 # Blu Go Protection
                 # ----------------------------------------
-            2|blugo|BluGo|bluGo|BLUGO) DIR="/bluGo/formats/hosts.gz"
+                2|blugo|BluGo|bluGo|BLUGO) DIR="/bluGo/formats/hosts.gz"
                 clear
                 echo -e $Y"$divider"$N; sleep 0.05;
                 echo -e $Y'[+] Applying Energized Blu Go Protection'$N; sleep 0.05;
@@ -355,7 +360,7 @@ showMenu() {
                 ;;
                 # Blu Protection
                 # ----------------------------------------
-            3|blu|Blu|BLU) DIR="/blu/formats/hosts.gz"
+                3|blu|Blu|BLU) DIR="/blu/formats/hosts.gz"
                 clear
                 echo -e $Y"$divider"$N; sleep 0.05;
                 echo -e $Y'[+] Applying Energized Blu Protection'$N; sleep 0.05;
@@ -363,7 +368,7 @@ showMenu() {
                 ;;
                 # Basic Protection
                 # ----------------------------------------
-            4|basic|Basic|BASIC) clear
+                4|basic|Basic|BASIC) clear
                 printWarning;
                 areYouSure;
                 if [[ "$userAnswer" == "Y" || "$userAnswer" == "y" ]]; then
@@ -379,7 +384,7 @@ showMenu() {
                 ;;
                 # Ultimate Protection
                 # ----------------------------------------
-            5|ultimate|Ultimate|ULTIMATE) clear
+                5|ultimate|Ultimate|ULTIMATE) clear
                 printWarning;
                 areYouSure;
                 if [[ "$userAnswer" == "Y" || "$userAnswer" == "y" ]]; then
@@ -395,7 +400,7 @@ showMenu() {
                 ;;
                 # Unified Protection
                 # ----------------------------------------
-            6|unified|Unified|UNIFIED) clear
+                6|unified|Unified|UNIFIED) clear
                 printWarning;
                 areYouSure;
                 if [[ "$userAnswer" == "Y" || "$userAnswer" == "y" ]]; then
@@ -411,7 +416,7 @@ showMenu() {
                 ;;
                 # Porn Protection
                 # ----------------------------------------
-            p|porn|Porn|PORN) clear
+                p|porn|Porn|PORN) clear
                 printWarning;
                 areYouSure;
                 if [[ "$userAnswer" == "Y" || "$userAnswer" == "y" ]]; then
@@ -427,7 +432,7 @@ showMenu() {
                 ;;
                 # Porn Lite Extension
                 # ----------------------------------------
-            pl) clear
+                pl) clear
                 cleanupTemp;
                 pornliteEDownload;
                 printDonate;
@@ -437,7 +442,7 @@ showMenu() {
                 ;;
                 # Regional Extension
                 # ----------------------------------------
-            rl|rg|regional|Regional|REGIONAL|REG|reg) clear
+                rl|rg|regional|Regional|REGIONAL|REG|reg) clear
                 cleanupTemp;
                 regionalEDownload;
                 printDonate;
@@ -447,7 +452,7 @@ showMenu() {
                 ;;
                 # Social Extension
                 # ----------------------------------------
-            s|social|Social|SOCIAL) clear
+                s|social|Social|SOCIAL) clear
                 cleanupTemp;
                 socialEDownload;
                 printDonate;
@@ -457,7 +462,7 @@ showMenu() {
                 ;;
                 # Xtreme Extension
                 # ----------------------------------------
-            x|X|xtreme|XTRM|xtrm|Xtrm|Xtreme) clear
+                x|X|xtreme|XTRM|xtrm|Xtrm|Xtreme) clear
                 cleanupTemp;
                 xtremeEDownload;
                 printDonate;
@@ -467,7 +472,7 @@ showMenu() {
                 ;;
                 # Update - hosts, whitelist, blacklist s extension(s)
                 # ----------------------------------------
-            u) clear
+                u) clear
                 checkEP;
                 updateHWBE;
                 removeDuplicates;
@@ -476,110 +481,117 @@ showMenu() {
                 ;;
                 # Whitelist
                 # ----------------------------------------
-            w) clear
+                w) clear
                 doWhitelist;
                 printCountedDomains;
                 printReturn;
                 ;;
                 # Instant Whitelist
                 # ----------------------------------------
-            iw) clear
+                iw) clear
                 instantWhitelist;
                 printCountedDomains;
                 printReturn;
                 ;;
                 # Blacklist
                 # ----------------------------------------
-            b) clear
+                b) clear
                 doBlacklist;
                 printCountedDomains;
                 printReturn;
                 ;;
                 # Instant Blacklist
                 # ----------------------------------------
-            ib) clear
+                ib) clear
                 instantBlacklist;
                 printCountedDomains;
                 printReturn;
                 ;;
                 # Redirect
                 # ----------------------------------------
-            r) clear
+                r) clear
                 doRedirect;
                 printCountedDomains;
                 printReturn;
                 ;;
                 # Instant Redirect
                 # ----------------------------------------
-            ir) clear
+                ir) clear
                 instantRedirect;
                 printCountedDomains;
                 printReturn;
                 ;;
                 # Systemless Hosts
                 # ----------------------------------------
-            mg|magisk|Magisk|MAGISK) am start -n com.topjohnwu.magisk/a.c
+                mg|magisk|Magisk|MAGISK) am start -n com.topjohnwu.magisk/a.c
                 ;;
                 # Read Hosts File
                 # ----------------------------------------
-            o|O|oh|OH|openhosts|OpenHosts|hosts) openHosts;
+                o|O|oh|OH|openhosts|OpenHosts|hosts) openHosts;
                 ;;
                 # Info
                 # ----------------------------------------
-            i|info|Info|INFO) am start -a android.intent.action.VIEW -d "https://energized.pro"
+                i|info|Info|INFO) clear
+                showInfo;
+                echo -n -e "$W"'[+] Return?'"$N" "$Y"'[y/n]:'"$N"
+                read answer
+                if [[ "$answer" == "N" || "$answer" == "n" ]]; then
+                   break
+                fi
+                printReturn;
                 ;;
                 # Instructions
                 # ----------------------------------------
-            Guide|guide|in|instructions|instruction|IN|INSTRUCTION|INSTRUCTIONS) am start -a android.intent.action.VIEW -d "http://link.nayemador.com/epmagiskusage"
+                guide|Guide|in|instructions|IN) am start -a android.intent.action.VIEW -d "http://link.nayemador.com/epmagiskusage"
                 ;;
                 # Submit Issue
                 # ----------------------------------------
-            si|SI|webapp|WEBAPP|WebApp|app|submit|Submit|issue|Submit|is|SUBMIT|ISSUE|IS) clear
+                si|SI|webapp|WEBAPP|WebApp|app|submit|Submit|issue|Submit|is|SUBMIT|ISSUE|IS) clear
                 submitIssue;
                 printReturn;
                 ;;
                 # Telegram
                 # ----------------------------------------
-            tg|telegram|Telegram|TELEGRAM) visitTelegram;
+                tg|telegram|Telegram|TELEGRAM) visitTelegram;
                 ;;
                 # Backup Hosts
                 # ----------------------------------------
-            bp) clear
+                bp) clear
                 backupHosts;
                 printReturn;
                 ;;
                 # Restore Hosts
                 # ----------------------------------------
-            rs|restore|Restore|RESTORE) clear
+                rs|restore|Restore|RESTORE) clear
                 restoreHosts;
                 printReturn;
                 ;;
                 # Clear Hosts
                 # ----------------------------------------
-            c|clear|Clear|CLEAR) clear
+                c|clear|Clear|CLEAR) clear
                 clearHosts;
                 printReturn;
                 ;;
                 # Redirection IP
                 # ----------------------------------------
-            ip) clear
+                ip) clear
                 redirectIP;
                 printReturn
                 ;;
                 # Check Domain In Hosts
                 # ----------------------------------------
-            chk|check|Check|CHECK|ck) clear
+                chk|check|Check|CHECK|ck) clear
                 checkBlacklistDomain;
                 printCountedDomains;
                 printReturn;
                 ;;
                 # Quit
                 # ----------------------------------------
-            q) break
+                q) break
                 clear
-                reset
                 ;;
-            *)  echo -e $R"$divider"$N
+                *)  
+                echo -e $R"$divider"$N
                 echo -e $R"----------- I N V A L I D  I N P U T ! ----------"$N
                 echo -e $R"$divider"$N
                 sleep 1
@@ -605,7 +617,6 @@ showMenu() {
         DIR=""
         COUNT=$((COUNT+1))
         clear
-        reset
     done
     rm -f $versionInfo
     echo "[+] Done!"

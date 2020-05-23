@@ -4,10 +4,10 @@
 
 <div align="center">
   <!-- Version -->
-    <img src="https://img.shields.io/badge/Version-1.0.8β-blue.svg?longCache=true&style=flat-square"
+    <img src="https://img.shields.io/badge/Version-1.2.0β-blue.svg?longCache=true&style=flat-square"
       alt="Version" />
   <!-- Last Updated -->
-    <img src="https://img.shields.io/badge/Updated-May 22, 2020-orange.svg?longCache=true&style=flat-square"
+    <img src="https://img.shields.io/badge/Updated-May 23, 2020-orange.svg?longCache=true&style=flat-square"
       alt="_time_stamp_" />
   <!-- Status -->
     <img src="https://img.shields.io/badge/Status-beta-yellow.svg?longCache=true&style=flat-square"
@@ -64,7 +64,7 @@
 
 Requirements
 ------
- - Install the `Busybox For Android NDK` Busybox Module from Magisk Manager.
+ - Magisk v20.0+
 
 Run
 ------
@@ -159,6 +159,8 @@ Usage: ep [options...]
  -un, --uninstall
         >> Uninstall the module setup.
         > e.g., ep -un
+ -v, --version
+        >> Print version. 
 ```
 
 
@@ -181,6 +183,16 @@ Uninstall
  
 Changelog
 ------
+
+v.1.2.0β
+- No more separate busybox required. Magisk Busybox will be used by default.
+- Updated Magisk Template to v20.0+. No more support for Magisk <v20.0.
+- Fixed domain counting awk segmentation fault error.
+- Updated info flag details.
+- Improved backup and restore functions.
+- Added `--version` flag.
+- Beautify `--help` flag details.
+- Few fix patches applied.
 
 v.1.0.8β
 - Fix patch applied to adblock app detection.

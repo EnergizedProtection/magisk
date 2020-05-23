@@ -7,43 +7,14 @@ checkMagisk() {
     printMagiskVersion=$(magisk -c | cut -d':' -f1)
     magiskVersion=$(magisk -V)
     case "$magiskVersion" in
-        '15.'[1-9]*) # Version 15.1 - 15.9
-            hosts=/sbin/.core/img/.core/hosts
-            busyboxPath=/sbin/.core/img/busybox-ndk
-            return 1
-            ;;
-        '16.'[1-9]*) # Version 16.1 - 16.9
-            hosts=/sbin/.core/img/.core/hosts
-            busyboxPath=/sbin/.core/img/busybox-ndk
-            return 1
-            ;;
-        '17.'[1-3]*) # Version 17.1 - 17.3
-            hosts=/sbin/.core/img/.core/hosts
-            busyboxPath=/sbin/.core/img/busybox-ndk
-            return 1
-            ;;
-        '17.'[4-9]*) # Version 17.4 - 17.9
-            hosts=/sbin/.magisk/img/hosts/system/etc/hosts
-            busyboxPath=/sbin/.magisk/img/busybox-ndk
-            return 1
-            ;;
-        '18'[0-9]*) # Version 18.x
-            hosts=/sbin/.magisk/img/hosts/system/etc/hosts
-            busyboxPath=/sbin/.magisk/img/busybox-ndk
-            return 1
-            ;;
-        '19'[0-9a-zA-Z]*) # Version 19.x
-            hosts=/data/adb/modules/hosts/system/etc/hosts
-            busyboxPath=/data/adb/modules/busybox-ndk
-            return 1
-            ;;
         '20'[0-9a-zA-Z]*) # Version 20.x
             hosts=/data/adb/modules/hosts/system/etc/hosts
-            busyboxPath=/data/adb/modules/busybox-ndk
+            busyboxPath=/data/adb/magisk
             return 1
             ;;
         *)
             echo -e $R"Unknown Version: $printMagiskVersion"$N; sleep 5;
+            exit
             return 0
             ;;
     esac
@@ -54,7 +25,8 @@ checkMagisk() {
 # Check busybox
 # ----------------------------------------
 checkBusybox() {
-    busybox=$(ls "$busyboxPath/system/bin/busybox" || ls "$busyboxPath/system/xbin/busybox") 2>/dev/null
+    #busybox=$(ls "$busyboxPath/system/bin/busybox" || ls "$busyboxPath/system/xbin/busybox" || ls "$busyboxPath/busybox") 2>/dev/null
+    busybox=$(ls "$busyboxPath/busybox") 2>/dev/null
     busyboxAuto=$(ls /system/bin/busybox || ls /system/sbin/busybox || ls /system/xbin/busybox || ls /sbin/busybox) 2>/dev/null
     busyboxManualGzip=$(ls /system/bin/gzip || ls /system/sbin/gzip || ls /system/xbin/gzip || ls /sbin/gzip) 2>/dev/null
     busyboxManualWget=$(ls /system/bin/wget || ls /system/sbin/wget || ls /system/xbin/wget || ls /sbin/wget) 2>/dev/null
@@ -68,15 +40,39 @@ checkBusybox() {
         busyboxName=$(echo "$("$busyboxAuto" | head -1 | cut -f 2 -d ' ')")
         return 1
     elif [ -n "$busyboxManualGzip" ] && [ -n "$busyboxManualWget" ] && [ -n "$busyboxManualAwk" ] && [ -n "$busyboxManualSort" ] && [ -n "$busyboxManualTruncate" ]; then
-        busyboxName=$(echo 'Busybox Applets')
+        busyboxName=$(echo 'Busybox Applets') 
         return 2
     elif [ -z "$busybox" ] || [ -z "$busyboxAuto" ] || [ -z "$busyboxManualGzip" ] || [ -z "$busyboxManualWget" ] || [ -z "$busyboxManualAwk" ] || [ -z "$busyboxManualSort" ] || [ -z "$busyboxManualTruncate" ]; then
         busyboxName=$(echo $R'Not Found!'$N)
+        echo -e $R"[+] Busybox not found.\n[×] Exiting..."$N
+        exit
         return 0
     fi
 }
 # ----------------------------------------
-
+alias date="$busybox date"
+alias echo="$busybox echo"
+alias cat="$busybox cat"
+alias clear="$busybox clear"
+alias cp="$busybox cp"
+alias grep="$busybox grep"
+alias gunzip="$busybox gunzip"
+alias gzip="$busybox gzip"
+alias head="$busybox head"
+alias ls="$busybox ls"
+alias mkdir="$busybox mkdir"
+alias mv="$busybox mv"
+alias printf="$busybox printf"
+alias ps="$busybox ps"
+alias pwd="$busybox pwd"
+alias reset="$busybox reset"
+alias rm="$busybox rm"
+alias sed="$busybox sed"
+alias sleep="$busybox sleep"
+alias sort="$busybox sort"
+alias touch="$busybox touch"
+alias truncate="$busybox truncate"
+alias wget="$busybox wget"
 # ----------------------------------------
 # Check systemless hosts
 # ----------------------------------------
