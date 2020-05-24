@@ -4,16 +4,16 @@
 
 <div align="center">
   <!-- Version -->
-    <img src="https://img.shields.io/badge/Version-1.2.2β-blue.svg?longCache=true&style=flat-square"
+    <img src="https://img.shields.io/badge/Version-1.2.5-blue.svg?longCache=true&style=flat-square"
       alt="Version" />
   <!-- Magisk -->
-    <img src="https://img.shields.io/badge/Magisk-20.0+-green.svg?longCache=true&style=flat-square"
+    <img src="https://img.shields.io/badge/Magisk-20.4-green.svg?longCache=true&style=flat-square"
       alt="Version" />  
   <!-- Last Updated -->
-    <img src="https://img.shields.io/badge/Updated-May 23, 2020-orange.svg?longCache=true&style=flat-square"
+    <img src="https://img.shields.io/badge/Updated-May 24, 2020-orange.svg?longCache=true&style=flat-square"
       alt="_time_stamp_" />
   <!-- Status -->
-    <img src="https://img.shields.io/badge/Status-beta-yellow.svg?longCache=true&style=flat-square"
+    <img src="https://img.shields.io/badge/Status-Stable-green.svg?longCache=true&style=flat-square"
       alt="_time_stamp_" />
 </div>
 
@@ -67,7 +67,7 @@
 
 Requirements
 ------
- - Magisk v20.0+
+ - Use Magisk v20.4 for better compatibility.
 
 Run
 ------
@@ -187,33 +187,10 @@ Uninstall
 Changelog
 ------
 
-v.1.2.2β
-- Fixed pack download issue in menu mode.
-- Updated `--help` details.
-
-v.1.2.1β
-- Added missing awk alias.
-
-v.1.2.0β
+v.1.2.5
+- Added CLI Flag support.
 - No more separate busybox required. Magisk Busybox will be used by default.
 - Updated Magisk Template to v20.0+. No more support for Magisk <v20.0.
-- Fixed domain counting awk segmentation fault error.
-- Updated info flag details.
-- Improved backup and restore functions.
-- Added `--version` flag.
-- Beautify `--help` flag details.
-- Few fix patches applied.
-
-v.1.0.8β
-- Fix patch applied to adblock app detection.
-- Fixed pack download issue via CLI flag. (`ep -p <pack>`)
-- Fixed basic file setup issue.
-- Beautify the module scripts.
-- Fixed typo.
-
-v.1.0.0β
-- Added CLI Flag support.
-- Added Magisk 20+ compatibility.
 - Added user config support.
 - Improved blacklist, whitelist and redirectlist functions.
 - Improved instant blacklist, whitelist and redirectlist functions.
@@ -224,13 +201,16 @@ v.1.0.0β
 - Added more functions. Use `ep -h` or `ep --help` for more info.
 - Updated H&WB function to support automatic extension and current IP detection.
 - Improved and updated almost all of the functions to match new changes.
+- Fixed domain counting awk segmentation fault error.
 - UI revamped. A lot of things have been updated.
+- Beautify the module scripts.
 - Updated sleep parameters.
 - Script was re-written and lot of new patches have been applied.
-- Fixed known bugs so far.
+- Fixed new change related issues so far.
+- Script improvement and fix patches applied.
 
- 
-[_*Previous Changes_](https://gist.github.com/AdroitAdorKhan/fb81c83b0339e89913bc9f252e2f313d)
+
+[_*Previous Changes_](https://gist.github.com/AdroitAdorKhan/fb81c83b0339e89913bc9f252e2f313d) | [_**Beta Builds and Changes_](https://github.com/EnergizedProtection/magisk/releases)
 
 ## Check Energized
 ------
