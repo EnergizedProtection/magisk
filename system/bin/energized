@@ -8,14 +8,6 @@
 # ========================================
 
 # ----------------------------------------
-# Define Energized Protection directory
-# ----------------------------------------
-directory="/sdcard/EnergizedProtection"
-# Create directory
-if [ ! -d $directory ]; then
-    mkdir -p $directory;
-fi
-# ----------------------------------------
 # Load setup files and strings
 modPath="/sbin/.magisk/modules/energizedprotection/system/bin"
 . $modPath/setupFiles.sh
@@ -24,6 +16,15 @@ modPath="/sbin/.magisk/modules/energizedprotection/system/bin"
 
 alias wget="$busybox wget"
 alias awk="$busybox awk"
+
+# ----------------------------------------
+# Define Energized Protection directory
+# ----------------------------------------
+directory="/sdcard/EnergizedProtection"
+# Create directory
+if [ ! -d $directory ]; then
+    mkdir -p $directory;
+fi
 
 # ----------------------------------------
 # Config
