@@ -4,7 +4,7 @@
 
 <div align="center">
   <!-- Version -->
-    <img src="https://img.shields.io/badge/Version-1.3.1-blue.svg?longCache=true&style=flat-square"
+    <img src="https://img.shields.io/badge/Version-1.3.2-blue.svg?longCache=true&style=flat-square"
       alt="Version" />
   <!-- Magisk -->
     <img src="https://img.shields.io/badge/Magisk-20.0+-green.svg?longCache=true&style=flat-square"
@@ -188,8 +188,9 @@ Uninstall
 Changelog
 ------
 
-v.1.3.1
+v.1.3.2
 - Added missing cut alias. (Which was breaking domain verifying functions.)
+- Fixed missing systemless hosts print.
 
 v.1.3.0
 - Added back Magisk v20.0 - 20.3 support.
