@@ -524,7 +524,7 @@ changeRedirectionIP() { sed -ie 's/[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-
 # Ectract domain from URL
 # ----------------------------------------
 getDomain() {
-    domainOnly=$(echo "$1" | cut -d'/' -f3 | cut -d':' -f1 | cut -d'\@' -f2)
+    domainOnly=$(echo "$1" | cut -d'/' -f3 | cut -d':' -f1 | cut -d'@' -f2)
     case $domainOnly in
             (*[a-zA-Z]*)
             for i in $domainOnly ; do
